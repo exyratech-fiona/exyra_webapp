@@ -52,47 +52,67 @@ export function Navbar() {
         {/* ── Logo ── */}
         <a
           href="#"
-          className="relative flex flex-col items-center justify-center shrink-0 group"
-          style={{ gap: "6px" }}
+          className="relative flex flex-col items-center shrink-0 group"
+          style={{ gap: "2px" }}
         >
-          {/* Bloom glow — sits behind the mark, same visual center */}
+          {/* Cinematic bloom — anchored behind mark body */}
           <div
-            className="absolute pointer-events-none z-0"
+            className="absolute pointer-events-none"
             style={{
-              top: "50%",
+              top: "4px",
               left: "50%",
-              transform: "translate(-50%, -62%)",
-              width: "100px",
-              height: "48px",
-              background: "radial-gradient(ellipse, rgba(0,140,255,0.28) 0%, rgba(20,87,214,0.12) 50%, transparent 72%)",
-              filter: "blur(14px)",
+              transform: "translateX(-50%)",
+              width: "92px",
+              height: "42px",
+              background:
+                "radial-gradient(ellipse at 50% 60%, rgba(0,130,255,0.32) 0%, rgba(20,87,214,0.14) 50%, transparent 75%)",
+              filter: "blur(16px)",
+              zIndex: 0,
             }}
           />
 
-          {/* Mark — wider display so visual glyph proportion matches text width */}
-          <Image
-            src="/exyralogo-transparent.png"
-            alt="Exyra Technologies"
-            width={96}
-            height={64}
-            className="object-contain relative z-10"
+          {/* Mark container — clips PNG bottom whitespace (~20% of height)
+              so the visual mark bottom sits flush with the container edge */}
+          <div
             style={{
-              filter:
-                "drop-shadow(0 0 8px rgba(0,188,212,0.6)) drop-shadow(0 2px 18px rgba(20,87,214,0.4))",
+              width: "90px",
+              height: "52px",   /* ~81% of 64px removes bottom padding in PNG */
+              overflow: "hidden",
+              position: "relative",
+              zIndex: 1,
+              flexShrink: 0,
             }}
-          />
+          >
+            <Image
+              src="/exyralogo-transparent.png"
+              alt="Exyra Technologies"
+              width={90}
+              height={64}
+              className="object-contain object-top w-full"
+              style={{
+                filter:
+                  "drop-shadow(0 0 7px rgba(0,188,212,0.58)) drop-shadow(0 0 22px rgba(20,87,214,0.38))",
+              }}
+            />
+          </div>
 
-          {/* EXYRA text — wide premium kerning, true optical center */}
+          {/* EXYRA — 14px, 0.36em tracking, paddingLeft compensates letter-spacing
+              so visual text center = image visual center exactly */}
           <span
-            className="relative z-10 font-display font-black leading-none uppercase"
             style={{
-              fontSize: "15px",
-              letterSpacing: "0.38em",
-              paddingLeft: "0.38em",   /* compensates CSS tracking shift on first char */
-              background: "linear-gradient(90deg, #28c8e8 0%, #1a6be0 55%, #1457d6 100%)",
+              fontSize: "14px",
+              fontFamily: "var(--font-syne), sans-serif",
+              fontWeight: 900,
+              letterSpacing: "0.36em",
+              paddingLeft: "0.36em",
+              lineHeight: 1,
+              textTransform: "uppercase",
+              whiteSpace: "nowrap",
+              background: "linear-gradient(90deg, #2ac8ea 0%, #1a70e8 50%, #1457d6 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              whiteSpace: "nowrap",
+              position: "relative",
+              zIndex: 1,
             }}
           >
             EXYRA
