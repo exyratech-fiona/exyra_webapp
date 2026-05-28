@@ -38,30 +38,30 @@ export function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed top-0 left-0 right-0 z-40 transition-all duration-300"
+      className="fixed top-0 left-0 right-0 z-40 transition-all duration-500"
       style={{
         background: scrolled
-          ? "rgba(4, 10, 26, 0.97)"
-          : "rgba(4, 10, 26, 0.92)",
-        borderBottom: "1px solid rgba(0, 188, 212, 0.12)",
-        backdropFilter: "blur(20px)",
+          ? "rgba(4, 10, 26, 0.98)"
+          : "rgba(4, 10, 26, 0.85)",
+        borderBottom: scrolled
+          ? "1px solid rgba(0, 188, 212, 0.18)"
+          : "1px solid rgba(0, 188, 212, 0.08)",
+        backdropFilter: "blur(24px)",
+        boxShadow: scrolled
+          ? "0 4px 32px rgba(0,0,0,0.4), 0 1px 0 rgba(0,188,212,0.1)"
+          : "none",
       }}
     >
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-[96px]">
 
         {/* ── Logo ── */}
-        <a href="#" className="shrink-0 group">
+        <a href="#" className="shrink-0">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src="/exyra-logo.png"
             alt="Exyra Technologies"
-            style={{
-              height: "90px",
-              width: "auto",
-              display: "block",
-              filter:
-                "drop-shadow(0 0 6px rgba(0,188,212,0.6)) drop-shadow(0 0 18px rgba(20,87,214,0.4))",
-            }}
+            className="transition-all duration-300 brightness-[0.92] hover:brightness-105 hover:scale-[1.04]"
+            style={{ height: "62px", width: "auto", display: "block" }}
           />
         </a>
 
@@ -72,9 +72,9 @@ export function Navbar() {
               <div key={link.label} className="relative"
                 onMouseEnter={() => setActiveDropdown(link.label)}
                 onMouseLeave={() => setActiveDropdown(null)}>
-                <button className="flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-semibold text-[#c8dcf4] hover:text-white transition-colors rounded-lg hover:bg-[rgba(255,255,255,0.06)]">
+                <button className="flex items-center gap-1.5 px-5 py-2.5 text-[14.5px] font-semibold tracking-[0.01em] text-[#b8d0ee] hover:text-white transition-all duration-200 rounded-lg hover:bg-[rgba(255,255,255,0.05)]">
                   {link.label}
-                  <ChevronDown size={15} className={cn("transition-transform duration-200", activeDropdown === link.label && "rotate-180")} />
+                  <ChevronDown size={14} className={cn("transition-transform duration-200", activeDropdown === link.label && "rotate-180")} />
                 </button>
                 <AnimatePresence>
                   {activeDropdown === link.label && (
@@ -102,7 +102,7 @@ export function Navbar() {
               </div>
             ) : (
               <a key={link.label} href={link.href}
-                className="px-5 py-2.5 text-[15px] font-semibold text-[#c8dcf4] hover:text-white transition-colors rounded-lg hover:bg-[rgba(255,255,255,0.06)]">
+                className="px-5 py-2.5 text-[14.5px] font-semibold tracking-[0.01em] text-[#b8d0ee] hover:text-white transition-all duration-200 rounded-lg hover:bg-[rgba(255,255,255,0.05)]">
                 {link.label}
               </a>
             )
@@ -111,8 +111,10 @@ export function Navbar() {
 
         {/* ── CTA ── */}
         <div className="hidden lg:flex items-center gap-4">
-          <a href="#contact" className="text-[15px] font-semibold text-[#c8dcf4] hover:text-white transition-colors">Sign in</a>
-          <GlowButton href="#contact" size="sm">Book Consultation</GlowButton>
+          <a href="#contact" className="text-[13.5px] font-medium tracking-wide text-[#7a92b4] hover:text-[#c8dcf4] transition-colors duration-200">
+            Sign in
+          </a>
+          <GlowButton href="#contact" size="sm">Book Consultation →</GlowButton>
         </div>
 
         {/* ── Mobile toggle ── */}

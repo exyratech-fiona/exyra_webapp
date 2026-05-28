@@ -123,9 +123,12 @@ export function Programs() {
           </div>
           <h2 className="text-4xl md:text-5xl font-bold font-display leading-tight mb-4">
             <span className="text-white">Enterprise-Grade</span>{" "}
-            <span className="gradient-text">Programs</span>
+            <span style={{
+              background: "linear-gradient(100deg, #00e5ff 0%, #1457d6 45%, #a855f7 100%)",
+              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
+            }}>Programs</span>
           </h2>
-          <p className="text-[#7a92b4]">
+          <p className="text-[#7a92b4] text-[1.05rem] leading-relaxed">
             Every program is production-first. You graduate with deployable systems, not certificates.
           </p>
         </motion.div>

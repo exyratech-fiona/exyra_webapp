@@ -1,6 +1,6 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, Suspense, lazy } from "react";
+import React, { useRef, Suspense, lazy } from "react";
 import { ArrowRight, ChevronDown, Zap, Shield, Cpu, Globe } from "lucide-react";
 import { GlowButton } from "@/components/ui/GlowButton";
 
@@ -43,23 +43,31 @@ function HeroStats() {
     { value: "45+",    label: "Live Projects",      color: "#8b5cf6" },
   ];
   return (
-    <div className="flex flex-wrap gap-5 mt-10">
+    <div className="flex flex-wrap gap-6 mt-10">
       {stats.map((s, i) => (
         <motion.div key={s.label}
           initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.2 + i * 0.1 }}
           className="flex items-center gap-3">
-          <div className="h-9 w-px opacity-40"
+          <div className="h-10 w-px opacity-50"
             style={{ background: `linear-gradient(180deg, transparent, ${s.color}, transparent)` }} />
           <div>
-            <div className="text-xl font-black font-display" style={{ color: s.color }}>{s.value}</div>
-            <div className="text-[11px] text-[#4a627e] font-sans mt-0.5 uppercase tracking-wide">{s.label}</div>
+            <div className="text-2xl font-black font-display leading-none" style={{ color: s.color }}>{s.value}</div>
+            <div className="text-[10.5px] text-[#4a627e] font-sans mt-1 uppercase tracking-widest">{s.label}</div>
           </div>
         </motion.div>
       ))}
     </div>
   );
 }
+
+const gradAnim: React.CSSProperties = {
+  background: "linear-gradient(100deg, #00e5ff 0%, #1457d6 42%, #a855f7 100%)",
+  WebkitBackgroundClip: "text",
+  WebkitTextFillColor: "transparent",
+  backgroundSize: "200% 100%",
+  animation: "gradShift 6s ease-in-out infinite",
+};
 
 export function Hero() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -73,6 +81,12 @@ export function Hero() {
     <section ref={containerRef}
       className="relative min-h-screen flex items-center overflow-hidden pt-[88px]"
       style={{ background: "#060e1e" }}>
+      <style>{`
+        @keyframes gradShift {
+          0%, 100% { background-position: 0% center; }
+          50% { background-position: 100% center; }
+        }
+      `}</style>
 
       {/* Particle field */}
       <Suspense fallback={null}>
@@ -132,25 +146,20 @@ export function Hero() {
             <motion.h1
               initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.9, delay: 0.1 }}
-              className="font-display font-black leading-[1.04] tracking-tight mb-5"
-              style={{ fontSize: "clamp(2.6rem, 5vw, 4.75rem)" }}>
-              <span className="text-[#e2eaf6]">Build the Future</span>
+              className="font-display font-black leading-[1.06] tracking-tight mb-6"
+              style={{ fontSize: "clamp(2.8rem, 5.2vw, 5rem)" }}>
+              <span className="text-[#eaf0fa]">Build the Future</span>
               <br />
-              <span style={{
-                background: "linear-gradient(100deg, #00bcd4 0%, #1457d6 45%, #8b5cf6 100%)",
-                WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-              }}>
-                with AI, Cloud
-              </span>
+              <span style={gradAnim}>with AI, Cloud</span>
               <br />
-              <span className="text-[#e2eaf6]">&amp; DevOps</span>
+              <span style={gradAnim}>&amp; DevOps</span>
             </motion.h1>
 
             {/* Subheadline */}
             <motion.p
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.3 }}
-              className="text-[1.05rem] text-[#7a92b4] font-sans leading-relaxed max-w-lg mb-8">
+              className="text-[1.12rem] text-[#7a92b4] font-sans leading-[1.75] max-w-lg mb-8">
               Production-grade AWS, Kubernetes, AI Automation &amp; LLM Engineering.
               Real projects. Real infrastructure.{" "}
               <span className="text-[#a8c0e0] font-medium">Zero fluff — just systems that scale.</span>
@@ -171,9 +180,9 @@ export function Hero() {
               {/* SECONDARY — supportive, visually lighter */}
               <a href="#contact"
                 className="inline-flex items-center gap-2 px-6 py-3.5 text-[15px] font-semibold font-sans rounded-xl transition-all duration-200 text-[#a8c0e0] hover:text-white"
-                style={{ border: "1px solid rgba(255,255,255,0.1)", background: "rgba(255,255,255,0.03)" }}
-                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(0,188,212,0.35)")}
-                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.1)")}>
+                style={{ border: "1px solid rgba(255,255,255,0.18)", background: "rgba(255,255,255,0.04)" }}
+                onMouseEnter={(e) => (e.currentTarget.style.borderColor = "rgba(0,188,212,0.5)")}
+                onMouseLeave={(e) => (e.currentTarget.style.borderColor = "rgba(255,255,255,0.18)")}>
                 Book Consultation
               </a>
             </motion.div>
@@ -196,23 +205,6 @@ export function Hero() {
 
             <HeroStats />
 
-            {/* Tech badges */}
-            <motion.div
-              initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-              transition={{ delay: 1.6 }}
-              className="flex flex-wrap gap-2 mt-7">
-              {badges.map((b, i) => (
-                <motion.div key={b.label}
-                  initial={{ opacity: 0, scale: 0.85 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.8 + i * 0.08 }}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-sans text-xs font-medium"
-                  style={{ background: "rgba(0,209,255,0.05)", border: "1px solid rgba(0,209,255,0.15)", color: "#00bcd4" }}>
-                  <b.icon size={11} />
-                  {b.label}
-                </motion.div>
-              ))}
-            </motion.div>
 
           </motion.div>
 
