@@ -53,51 +53,34 @@ export function Navbar() {
         <a
           href="#"
           className="relative flex flex-col items-center shrink-0 group"
-          style={{ gap: "2px" }}
+          style={{ gap: "3px" }}
         >
-          {/* Cinematic bloom — anchored behind mark body */}
-          <div
-            className="absolute pointer-events-none"
-            style={{
-              top: "4px",
-              left: "50%",
-              transform: "translateX(-50%)",
-              width: "92px",
-              height: "42px",
-              background:
-                "radial-gradient(ellipse at 50% 60%, rgba(0,130,255,0.32) 0%, rgba(20,87,214,0.14) 50%, transparent 75%)",
-              filter: "blur(16px)",
-              zIndex: 0,
-            }}
-          />
-
-          {/* Mark container — clips PNG bottom whitespace (~20% of height)
-              so the visual mark bottom sits flush with the container edge */}
+          {/* Mark container —
+              width: 68px → visual glyph ≈ 48px which optically aligns with X→R span
+              height: 40px → clips ~20% PNG bottom whitespace so mark sits flush */}
           <div
             style={{
-              width: "90px",
-              height: "52px",   /* ~81% of 64px removes bottom padding in PNG */
+              width: "68px",
+              height: "40px",
               overflow: "hidden",
-              position: "relative",
-              zIndex: 1,
               flexShrink: 0,
+              position: "relative",
             }}
           >
             <Image
               src="/exyralogo-transparent.png"
               alt="Exyra Technologies"
-              width={90}
-              height={64}
+              width={68}
+              height={52}
               className="object-contain object-top w-full"
               style={{
                 filter:
-                  "drop-shadow(0 0 7px rgba(0,188,212,0.58)) drop-shadow(0 0 22px rgba(20,87,214,0.38))",
+                  "drop-shadow(0 0 6px rgba(0,188,212,0.65)) drop-shadow(0 0 18px rgba(20,87,214,0.42)) drop-shadow(0 0 32px rgba(0,120,255,0.18))",
               }}
             />
           </div>
 
-          {/* EXYRA — 14px, 0.36em tracking, paddingLeft compensates letter-spacing
-              so visual text center = image visual center exactly */}
+          {/* EXYRA — letterSpacing + paddingLeft in same em unit = self-compensating center */}
           <span
             style={{
               fontSize: "18px",
@@ -111,8 +94,6 @@ export function Navbar() {
               background: "linear-gradient(90deg, #2ac8ea 0%, #1a70e8 50%, #1457d6 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              position: "relative",
-              zIndex: 1,
             }}
           >
             EXYRA
