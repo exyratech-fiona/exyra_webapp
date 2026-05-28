@@ -38,31 +38,32 @@ export function Navbar() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className={cn(
-        "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
-        scrolled
-          ? "py-4 glass border-b border-[rgba(255,255,255,0.06)]"
-          : "py-6 bg-transparent"
-      )}
+      className="fixed top-0 left-0 right-0 z-40 transition-all duration-300"
+      style={{
+        background: scrolled
+          ? "rgba(4, 10, 26, 0.97)"
+          : "rgba(4, 10, 26, 0.92)",
+        borderBottom: "1px solid rgba(0, 188, 212, 0.12)",
+        backdropFilter: "blur(20px)",
+      }}
     >
-      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-20">
 
-        {/* ── Logo ── */}
-        <a href="#" className="flex flex-col items-center gap-1 group">
+        {/* ── Logo: mark above, EXYRA below — left aligned ── */}
+        <a href="#" className="flex flex-col items-start gap-0.5 group shrink-0">
           <Image
             src="/exyralogo-transparent.png"
-            alt="Exyra Technologies"
-            width={56}
-            height={38}
-            className="object-contain drop-shadow-[0_0_8px_rgba(0,188,212,0.6)]"
+            alt="Exyra"
+            width={64}
+            height={42}
+            className="object-contain drop-shadow-[0_0_10px_rgba(0,188,212,0.55)]"
           />
           <span
-            className="text-lg font-black tracking-widest font-display leading-none uppercase"
+            className="text-base font-black font-display leading-none tracking-[0.18em] uppercase"
             style={{
               background: "linear-gradient(90deg, #00bcd4, #1457d6)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
-              letterSpacing: "0.15em",
             }}
           >
             Exyra
@@ -76,7 +77,7 @@ export function Navbar() {
               <div key={link.label} className="relative"
                 onMouseEnter={() => setActiveDropdown(link.label)}
                 onMouseLeave={() => setActiveDropdown(null)}>
-                <button className="flex items-center gap-1 px-4 py-2 text-sm text-[#a8c0e0] hover:text-white transition-colors rounded-lg hover:bg-[rgba(255,255,255,0.05)]">
+                <button className="flex items-center gap-1 px-4 py-2 text-sm text-[#a8c0e0] hover:text-white transition-colors rounded-lg hover:bg-[rgba(255,255,255,0.06)]">
                   {link.label}
                   <ChevronDown size={14} className={cn("transition-transform duration-200", activeDropdown === link.label && "rotate-180")} />
                 </button>
@@ -87,7 +88,12 @@ export function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 8, scale: 0.97 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-1 w-52 glass rounded-xl border border-[rgba(255,255,255,0.08)] py-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+                      className="absolute top-full left-0 mt-1 w-52 rounded-xl border py-1.5 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+                      style={{
+                        background: "rgba(4,10,26,0.97)",
+                        border: "1px solid rgba(0,188,212,0.15)",
+                        backdropFilter: "blur(20px)",
+                      }}
                     >
                       {link.items.map((item) => (
                         <a key={item.label} href={item.href}
@@ -101,7 +107,7 @@ export function Navbar() {
               </div>
             ) : (
               <a key={link.label} href={link.href}
-                className="px-4 py-2 text-sm text-[#a8c0e0] hover:text-white transition-colors rounded-lg hover:bg-[rgba(255,255,255,0.05)]">
+                className="px-4 py-2 text-sm text-[#a8c0e0] hover:text-white transition-colors rounded-lg hover:bg-[rgba(255,255,255,0.06)]">
                 {link.label}
               </a>
             )
@@ -116,7 +122,8 @@ export function Navbar() {
 
         {/* ── Mobile toggle ── */}
         <button onClick={() => setMobileOpen(!mobileOpen)}
-          className="lg:hidden p-2 rounded-lg glass text-white">
+          className="lg:hidden p-2 rounded-lg text-white"
+          style={{ background: "rgba(255,255,255,0.06)", border: "1px solid rgba(255,255,255,0.1)" }}>
           {mobileOpen ? <X size={20} /> : <Menu size={20} />}
         </button>
       </div>
@@ -128,7 +135,8 @@ export function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden glass border-t border-[rgba(255,255,255,0.06)] overflow-hidden"
+            className="lg:hidden overflow-hidden"
+            style={{ borderTop: "1px solid rgba(0,188,212,0.1)", background: "rgba(4,10,26,0.98)" }}
           >
             <div className="px-6 py-4 space-y-1">
               {navLinks.map((link) =>
