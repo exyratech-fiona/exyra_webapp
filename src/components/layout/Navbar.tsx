@@ -100,7 +100,7 @@ export function Navbar() {
               so visual text center = image visual center exactly */}
           <span
             style={{
-              fontSize: "14px",
+              fontSize: "18px",
               fontFamily: "var(--font-syne), sans-serif",
               fontWeight: 900,
               letterSpacing: "0.36em",
