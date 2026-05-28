@@ -50,16 +50,16 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-[88px]">
 
         {/* ── Logo: mark above, EXYRA below — left aligned ── */}
-        <a href="#" className="flex flex-col items-start gap-1 group shrink-0">
+        <a href="#" className="flex flex-col items-center gap-1 group shrink-0 w-[90px]">
           <Image
             src="/exyralogo-transparent.png"
             alt="Exyra"
-            width={84}
-            height={56}
-            className="object-contain drop-shadow-[0_0_12px_rgba(0,188,212,0.6)]"
+            width={80}
+            height={54}
+            className="object-contain w-full drop-shadow-[0_0_12px_rgba(0,188,212,0.6)]"
           />
           <span
-            className="text-xl font-black font-display leading-none tracking-[0.2em] uppercase"
+            className="text-xl font-black font-display leading-none tracking-[0.22em] uppercase w-full text-center"
             style={{
               background: "linear-gradient(90deg, #00bcd4, #1457d6)",
               WebkitBackgroundClip: "text",
@@ -77,7 +77,7 @@ export function Navbar() {
               <div key={link.label} className="relative"
                 onMouseEnter={() => setActiveDropdown(link.label)}
                 onMouseLeave={() => setActiveDropdown(null)}>
-                <button className="flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-medium text-[#a8c0e0] hover:text-white transition-colors rounded-lg hover:bg-[rgba(255,255,255,0.06)]">
+                <button className="flex items-center gap-1.5 px-5 py-2.5 text-[15px] font-semibold text-[#c8dcf4] hover:text-white transition-colors rounded-lg hover:bg-[rgba(255,255,255,0.06)]">
                   {link.label}
                   <ChevronDown size={15} className={cn("transition-transform duration-200", activeDropdown === link.label && "rotate-180")} />
                 </button>
@@ -107,7 +107,7 @@ export function Navbar() {
               </div>
             ) : (
               <a key={link.label} href={link.href}
-                className="px-5 py-2.5 text-[15px] font-medium text-[#a8c0e0] hover:text-white transition-colors rounded-lg hover:bg-[rgba(255,255,255,0.06)]">
+                className="px-5 py-2.5 text-[15px] font-semibold text-[#c8dcf4] hover:text-white transition-colors rounded-lg hover:bg-[rgba(255,255,255,0.06)]">
                 {link.label}
               </a>
             )
@@ -116,7 +116,7 @@ export function Navbar() {
 
         {/* ── CTA ── */}
         <div className="hidden lg:flex items-center gap-4">
-          <a href="#contact" className="text-[15px] font-medium text-[#a8c0e0] hover:text-white transition-colors">Sign in</a>
+          <a href="#contact" className="text-[15px] font-semibold text-[#c8dcf4] hover:text-white transition-colors">Sign in</a>
           <GlowButton href="#contact" size="sm">Book Consultation</GlowButton>
         </div>
 
