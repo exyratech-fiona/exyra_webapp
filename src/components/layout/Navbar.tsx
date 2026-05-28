@@ -47,52 +47,52 @@ export function Navbar() {
         backdropFilter: "blur(20px)",
       }}
     >
-      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-[88px]">
+      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-[96px]">
 
         {/* ── Logo ── */}
         <a
           href="#"
           className="relative flex flex-col items-center justify-center shrink-0 group"
-          style={{ gap: "5px", width: "88px" }}
+          style={{ gap: "6px" }}
         >
-          {/* Ambient glow bloom behind mark */}
+          {/* Bloom glow — sits behind the mark, same visual center */}
           <div
-            className="absolute pointer-events-none"
+            className="absolute pointer-events-none z-0"
             style={{
-              top: "2px",
+              top: "50%",
               left: "50%",
-              transform: "translateX(-50%)",
-              width: "72px",
-              height: "36px",
-              background: "radial-gradient(ellipse, rgba(20,87,214,0.32) 0%, rgba(0,188,212,0.12) 50%, transparent 75%)",
-              filter: "blur(10px)",
-              borderRadius: "50%",
+              transform: "translate(-50%, -62%)",
+              width: "100px",
+              height: "48px",
+              background: "radial-gradient(ellipse, rgba(0,140,255,0.28) 0%, rgba(20,87,214,0.12) 50%, transparent 72%)",
+              filter: "blur(14px)",
             }}
           />
 
-          {/* Mark — sized so visual glyph ≈ text width */}
+          {/* Mark — wider display so visual glyph proportion matches text width */}
           <Image
             src="/exyralogo-transparent.png"
             alt="Exyra Technologies"
-            width={62}
-            height={42}
+            width={96}
+            height={64}
             className="object-contain relative z-10"
             style={{
               filter:
-                "drop-shadow(0 0 6px rgba(0,188,212,0.55)) drop-shadow(0 1px 14px rgba(20,87,214,0.35))",
+                "drop-shadow(0 0 8px rgba(0,188,212,0.6)) drop-shadow(0 2px 18px rgba(20,87,214,0.4))",
             }}
           />
 
-          {/* EXYRA — letter-spacing padded left to stay truly centered */}
+          {/* EXYRA text — wide premium kerning, true optical center */}
           <span
-            className="relative z-10 font-display font-black leading-none uppercase text-center w-full"
+            className="relative z-10 font-display font-black leading-none uppercase"
             style={{
-              fontSize: "12px",
-              letterSpacing: "0.32em",
-              paddingLeft: "0.32em", /* compensates tracking offset on first char */
-              background: "linear-gradient(90deg, #2ec6e0 0%, #1457d6 100%)",
+              fontSize: "15px",
+              letterSpacing: "0.38em",
+              paddingLeft: "0.38em",   /* compensates CSS tracking shift on first char */
+              background: "linear-gradient(90deg, #28c8e8 0%, #1a6be0 55%, #1457d6 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
+              whiteSpace: "nowrap",
             }}
           >
             EXYRA
