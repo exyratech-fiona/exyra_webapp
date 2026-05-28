@@ -52,9 +52,9 @@ export function Navbar() {
           <Image
             src="/exyralogo-transparent.png"
             alt="Exyra Technologies"
-            width={44}
-            height={30}
-            className="object-contain drop-shadow-[0_0_6px_rgba(0,188,212,0.5)]"
+            width={72}
+            height={48}
+            className="object-contain drop-shadow-[0_0_8px_rgba(0,188,212,0.6)]"
           />
           <div className="flex items-baseline gap-1.5 leading-none">
             <span
