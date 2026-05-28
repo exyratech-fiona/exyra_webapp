@@ -53,34 +53,45 @@ export function Navbar() {
         <a
           href="#"
           className="relative flex flex-col items-center shrink-0 group"
-          style={{ gap: "3px" }}
+          style={{ gap: "4px" }}
         >
-          {/* Mark container —
-              width: 68px → visual glyph ≈ 48px which optically aligns with X→R span
-              height: 40px → clips ~20% PNG bottom whitespace so mark sits flush */}
+          {/*
+            PNG analysis: 1536×1024, mark at x=320→1276 (62% of width), y=245→671 (41% of height)
+            Top whitespace: 23%, Bottom whitespace: 34%
+
+            Display math:
+            - Image rendered: 82×55px
+            - Clip container height: 36px = shows top 65% (23% top pad + 41% mark + 1% buffer)
+              → bottom 34% whitespace is clipped
+            - Visual mark width: 62% × 82px = 50.8px ≈ 51px
+            - EXYRA text at 18px/0.36em tracking: X→R span ≈ 51px ✓
+          */}
           <div
             style={{
-              width: "68px",
-              height: "40px",
+              width: "82px",
+              height: "36px",
               overflow: "hidden",
               flexShrink: 0,
-              position: "relative",
             }}
           >
-            <Image
-              src="/exyralogo-transparent.png"
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
+              src="/Exyralogo.png"
               alt="Exyra Technologies"
-              width={68}
-              height={52}
-              className="object-contain object-top w-full"
               style={{
+                width: "82px",
+                height: "55px",
+                objectFit: "contain",
+                objectPosition: "top center",
+                display: "block",
                 filter:
-                  "drop-shadow(0 0 6px rgba(0,188,212,0.65)) drop-shadow(0 0 18px rgba(20,87,214,0.42)) drop-shadow(0 0 32px rgba(0,120,255,0.18))",
+                  "drop-shadow(0 0 5px rgba(0,188,212,0.7)) drop-shadow(0 0 16px rgba(20,87,214,0.45)) drop-shadow(0 0 28px rgba(0,100,255,0.2))",
               }}
             />
           </div>
 
-          {/* EXYRA — letterSpacing + paddingLeft in same em unit = self-compensating center */}
+          {/* EXYRA — 18px Syne Black, 0.36em tracking
+              paddingLeft: 0.36em compensates letter-spacing left-shift → exact optical center */}
           <span
             style={{
               fontSize: "18px",

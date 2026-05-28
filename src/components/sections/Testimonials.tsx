@@ -6,58 +6,64 @@ import { Star, ChevronLeft, ChevronRight, Quote } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Sarah Chen",
-    role: "ML Infrastructure Engineer",
-    company: "Meta",
-    avatar: "SC",
+    name: "Karthikeyan S.",
+    role: "DevOps Engineer",
+    company: "TCS",
+    avatar: "KS",
     color: "#1457d6",
     rating: 5,
-    text: "Exyra's AI Engineering program changed my career trajectory completely. I went from backend dev to ML infra engineer at Meta within 6 months. The RAG systems and LLMOps modules are genuinely production-level — nothing like anything I found online.",
+    outcome: "Placed within 45 days",
+    text: "I was a final-year CSE student with zero cloud exposure. After Exyra's DevOps program I cleared CKA and landed at TCS Digital. The hands-on EKS labs and CI/CD pipelines made my interview stand out completely.",
   },
   {
-    name: "Arjun Patel",
-    role: "Senior DevOps Engineer",
-    company: "Stripe",
-    avatar: "AP",
+    name: "Nithya R.",
+    role: "AI Engineer",
+    company: "Zoho",
+    avatar: "NR",
     color: "#00bcd4",
     rating: 5,
-    text: "The Kubernetes and platform engineering depth here is unmatched. I got CKA certified and landed at Stripe within 3 months of completing the DevOps track. The hands-on EKS cluster access made all the difference — theory backed by real infrastructure.",
+    outcome: "₹8.5 LPA first offer",
+    text: "The Generative AI & LLMOps track was everything. I built a RAG pipeline for my final-year project, impressed the Zoho panel, and got an AI Engineer role. Real project experience makes all the difference.",
   },
   {
-    name: "Priya Nair",
-    role: "Cloud Solutions Architect",
-    company: "AWS",
-    avatar: "PN",
+    name: "Praveen M.",
+    role: "Cloud Solutions Engineer",
+    company: "Infosys",
+    avatar: "PM",
     color: "#00e676",
     rating: 5,
-    text: "I joined as a junior developer and left as an AWS Solutions Architect. The multi-account landing zone and Bedrock AI modules were exactly what enterprise cloud work demands. Now I help customers build what I learned here.",
+    outcome: "AWS Certified in 60 days",
+    text: "Cleared AWS Solutions Architect Associate 60 days into the program. The multi-account setup and Terraform modules are genuinely enterprise-grade. Got into Infosys Cloud CoE and hit the ground running from day one.",
   },
   {
-    name: "James Wilson",
-    role: "AI Platform Lead",
-    company: "Goldman Sachs",
-    avatar: "JW",
+    name: "Divya K.",
+    role: "Platform Engineer",
+    company: "Cognizant",
+    avatar: "DK",
     color: "#8b5cf6",
     rating: 5,
-    text: "The enterprise consulting Exyra provided for our AI transformation was exceptional. They helped us migrate to a multi-agent AI platform, reducing our manual review time by 70%. Professional, deep, and results-driven.",
+    outcome: "From intern to full-time",
+    text: "Started with Exyra's internship program, built a live monitoring stack with Prometheus & Grafana, and converted it to a full-time offer at Cognizant. The mentorship and real infrastructure access is unmatched anywhere else.",
   },
   {
-    name: "Yuki Tanaka",
-    role: "LLM Engineer",
-    company: "Anthropic",
-    avatar: "YT",
+    name: "Arun Babu",
+    role: "AI Automation Engineer",
+    company: "Wipro",
+    avatar: "AB",
     color: "#1457d6",
     rating: 5,
-    text: "Exyra's MCP Server and Claude API modules are among the best technical content available. The instructors clearly work at the frontier. I reference their RAG architecture patterns daily in my work here.",
+    outcome: "Salary 3× previous role",
+    text: "3 years in manual QA, then Exyra's AI Automation track changed everything. Built LLM-powered test agents, got placed at Wipro AI Lab with 3× my previous salary. Best investment I've made in my career.",
   },
   {
-    name: "Marcus Johnson",
-    role: "Head of Platform Engineering",
-    company: "Databricks",
-    avatar: "MJ",
+    name: "Swetha V.",
+    role: "Full Stack + DevOps",
+    company: "Freshworks",
+    avatar: "SV",
     color: "#00bcd4",
     rating: 5,
-    text: "We upskilled 80 engineers through Exyra's custom enterprise program. The ROI was immediate — our deployment frequency doubled, incident response improved by 60%, and the team now owns their infrastructure end-to-end.",
+    outcome: "Final year project → job",
+    text: "My B.E. final-year project was a Kubernetes-native SaaS app built entirely with Exyra guidance. Freshworks hired me based on the live demo. No other training institute could have given me a production-grade project like this.",
   },
 ];
 
@@ -113,12 +119,18 @@ export function Testimonials() {
               className="glass rounded-3xl p-8 md:p-10 border border-[rgba(255,255,255,0.07)] relative"
             >
               <Quote size={40} className="absolute top-6 right-8 text-[rgba(255,255,255,0.05)]" />
-              <div className="flex items-center gap-1 mb-6">
-                {Array.from({ length: testimonials[current].rating }).map((_, i) => (
-                  <Star key={i} size={16} className="fill-[#00e676] text-[#00e676]" />
-                ))}
+              <div className="flex items-center justify-between mb-5">
+                <div className="flex items-center gap-1">
+                  {Array.from({ length: testimonials[current].rating }).map((_, i) => (
+                    <Star key={i} size={14} className="fill-[#00e676] text-[#00e676]" />
+                  ))}
+                </div>
+                <span className="text-xs font-semibold font-sans px-3 py-1 rounded-full"
+                  style={{ background: "rgba(0,230,118,0.08)", border: "1px solid rgba(0,230,118,0.2)", color: "#00e676" }}>
+                  ✓ {testimonials[current].outcome}
+                </span>
               </div>
-              <p className="text-lg text-[#c8d8f0] leading-relaxed mb-8 font-light">
+              <p className="text-[1.05rem] text-[#c8d8f0] leading-relaxed mb-8 font-light">
                 "{testimonials[current].text}"
               </p>
               <div className="flex items-center gap-4">

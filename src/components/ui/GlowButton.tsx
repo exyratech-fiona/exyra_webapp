@@ -27,8 +27,8 @@ export function GlowButton({
   };
 
   const variants = {
-    primary: "text-white",
-    secondary: "text-[#00bcd4] border border-[rgba(0,209,255,0.35)] hover:border-[#00bcd4]",
+    primary: "text-white shadow-[0_4px_24px_rgba(20,87,214,0.35)] hover:shadow-[0_8px_40px_rgba(20,87,214,0.55)] transition-shadow",
+    secondary: "text-[#a8c0e0] hover:text-white border border-[rgba(255,255,255,0.1)] hover:border-[rgba(0,188,212,0.35)] bg-[rgba(255,255,255,0.03)]",
     ghost: "text-[#7a92b4] hover:text-white border border-transparent hover:border-[rgba(0,209,255,0.15)]",
     neon: "text-[#00bcd4] border border-[#00bcd4]",
   };
