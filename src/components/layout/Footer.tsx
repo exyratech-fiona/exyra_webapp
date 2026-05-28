@@ -1,5 +1,5 @@
 "use client";
-import { Github, Linkedin, Twitter, Youtube, Mail, MapPin, Phone } from "lucide-react";
+import { Github, Linkedin, Twitter, Youtube, Instagram, Mail, MapPin, Phone } from "lucide-react";
 import Image from "next/image";
 
 const footerLinks = {
@@ -29,10 +29,10 @@ const footerLinks = {
 };
 
 const socials = [
-  { icon: Github,   href: "#", label: "GitHub"   },
-  { icon: Linkedin, href: "#", label: "LinkedIn"  },
-  { icon: Twitter,  href: "#", label: "Twitter"   },
-  { icon: Youtube,  href: "#", label: "YouTube"   },
+  { icon: Linkedin,  href: "https://www.linkedin.com/company/exyratech/",       label: "LinkedIn"  },
+  { icon: Instagram, href: "https://www.instagram.com/exyra_technologies/",    label: "Instagram" },
+  { icon: Github,    href: "#",                                                 label: "GitHub"    },
+  { icon: Youtube,   href: "#",                                                 label: "YouTube"   },
 ];
 
 const techBadges = ["AWS","Docker","Kubernetes","Terraform","Claude AI","Llama","FastAPI","Python","ELK","Prometheus","Grafana","Ansible","Redis","PostgreSQL"];

@@ -49,7 +49,7 @@ const socials = [
   {
     icon: Linkedin,
     label: "LinkedIn",
-    href: "https://linkedin.com/company/exyra",
+    href: "https://www.linkedin.com/company/exyratech/",
     color: "#0A66C2",
     bg: "rgba(10,102,194,0.08)",
     border: "rgba(10,102,194,0.25)",
@@ -57,7 +57,7 @@ const socials = [
   {
     icon: Instagram,
     label: "Instagram",
-    href: "https://instagram.com/exyratech",
+    href: "https://www.instagram.com/exyra_technologies/",
     color: "#E1306C",
     bg: "rgba(225,48,108,0.08)",
     border: "rgba(225,48,108,0.25)",
