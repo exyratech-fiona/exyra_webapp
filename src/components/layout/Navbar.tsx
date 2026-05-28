@@ -50,65 +50,19 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-[96px]">
 
         {/* ── Logo ── */}
-        <a
-          href="#"
-          className="relative flex flex-col items-center shrink-0 group"
-          style={{ gap: "4px" }}
-        >
-          {/*
-            PNG analysis: 1536×1024, mark at x=320→1276 (62% of width), y=245→671 (41% of height)
-            Top whitespace: 23%, Bottom whitespace: 34%
-
-            Display math:
-            - Image rendered: 82×55px
-            - Clip container height: 36px = shows top 65% (23% top pad + 41% mark + 1% buffer)
-              → bottom 34% whitespace is clipped
-            - Visual mark width: 62% × 82px = 50.8px ≈ 51px
-            - EXYRA text at 18px/0.36em tracking: X→R span ≈ 51px ✓
-          */}
-          <div
+        <a href="#" className="shrink-0 group">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/exyra-logo.png"
+            alt="Exyra Technologies"
             style={{
-              width: "82px",
-              height: "36px",
-              overflow: "hidden",
-              flexShrink: 0,
+              height: "90px",
+              width: "auto",
+              display: "block",
+              filter:
+                "drop-shadow(0 0 6px rgba(0,188,212,0.6)) drop-shadow(0 0 18px rgba(20,87,214,0.4))",
             }}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="/Exyralogo.png"
-              alt="Exyra Technologies"
-              style={{
-                width: "82px",
-                height: "55px",
-                objectFit: "contain",
-                objectPosition: "top center",
-                display: "block",
-                filter:
-                  "drop-shadow(0 0 5px rgba(0,188,212,0.7)) drop-shadow(0 0 16px rgba(20,87,214,0.45)) drop-shadow(0 0 28px rgba(0,100,255,0.2))",
-              }}
-            />
-          </div>
-
-          {/* EXYRA — 18px Syne Black, 0.36em tracking
-              paddingLeft: 0.36em compensates letter-spacing left-shift → exact optical center */}
-          <span
-            style={{
-              fontSize: "18px",
-              fontFamily: "var(--font-syne), sans-serif",
-              fontWeight: 900,
-              letterSpacing: "0.36em",
-              paddingLeft: "0.36em",
-              lineHeight: 1,
-              textTransform: "uppercase",
-              whiteSpace: "nowrap",
-              background: "linear-gradient(90deg, #2ac8ea 0%, #1a70e8 50%, #1457d6 100%)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            EXYRA
-          </span>
+          />
         </a>
 
         {/* ── Desktop Nav ── */}
