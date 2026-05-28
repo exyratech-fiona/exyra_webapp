@@ -68,9 +68,9 @@ export function Contact() {
             className="lg:col-span-2 space-y-6"
           >
             {[
-              { icon: Mail, label: "Email", value: "contact@exyra.tech", color: "#1457d6" },
-              { icon: Phone, label: "Phone", value: "+1 (555) 000-0000", color: "#00bcd4" },
-              { icon: MapPin, label: "Location", value: "San Francisco · Remote", color: "#00e676" },
+              { icon: Mail, label: "Email", value: "exyratech@gmail.com", color: "#1457d6" },
+              { icon: Phone, label: "Phone", value: "+91 94445 28270", color: "#00bcd4" },
+              { icon: MapPin, label: "Location", value: "Near Junction, Pollachi Main Rd, Malumichampatti, Tamil Nadu 641050, India", color: "#00e676" },
             ].map(({ icon: Icon, label, value, color }) => (
               <div key={label} className="flex gap-4 p-5 glass-light rounded-xl border border-[rgba(255,255,255,0.06)]">
                 <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: `${color}15`, border: `1px solid ${color}30` }}>

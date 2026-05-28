@@ -87,9 +87,9 @@ export default function Letterhead() {
         <div style={{ background: "#f4f8ff", padding: "14px 36px", borderTop: "1px solid #dce8f8" }}>
           <div className="flex flex-wrap gap-6 text-[10px]" style={{ color: "#3a6080" }}>
             {[
-              { icon: MapPin,  text: "Bengaluru, India · San Francisco, USA" },
-              { icon: Mail,    text: "contact@exyra.tech" },
-              { icon: Phone,   text: "+91 98765 43210" },
+              { icon: MapPin,  text: "Near Junction, Pollachi Main Rd, Malumichampatti, Tamil Nadu 641050, India" },
+              { icon: Mail,    text: "exyratech@gmail.com" },
+              { icon: Phone,   text: "+91 94445 28270" },
               { icon: Globe,   text: "www.exyra.tech" },
             ].map(({ icon: Icon, text }) => (
               <div key={text} className="flex items-center gap-1">

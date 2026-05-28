@@ -55,9 +55,9 @@ export function Footer() {
             </p>
             <div className="space-y-2 mb-6">
               {[
-                { icon: Mail,    text: "contact@exyra.tech"             },
-                { icon: Phone,   text: "+1 (555) 000-0000"              },
-                { icon: MapPin,  text: "San Francisco, CA & Remote"     },
+                { icon: Mail,    text: "exyratech@gmail.com"                                },
+                { icon: Phone,   text: "+91 94445 28270"                                   },
+                { icon: MapPin,  text: "Near Junction, Pollachi Main Rd, Malumichampatti, Tamil Nadu 641050, India" },
               ].map(({ icon: Icon, text }) => (
                 <div key={text} className="flex items-center gap-2 text-sm text-[#4a627e] font-sans">
                   <Icon size={13} className="text-[#00bcd4] shrink-0" />

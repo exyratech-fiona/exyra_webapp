@@ -67,7 +67,7 @@ export default function EmailSignature() {
                   </div>
                 </div>
                 <div style={{ fontSize: 9, color: "#7a92b4", textAlign: "right" }}>
-                  Bengaluru, India<br/>San Francisco, USA
+                  Malumichampatti, Tamil Nadu<br/>India – 641050
                 </div>
               </div>
             </div>
