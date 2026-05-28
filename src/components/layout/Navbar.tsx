@@ -41,43 +41,32 @@ export function Navbar() {
       className={cn(
         "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
         scrolled
-          ? "py-3 glass border-b border-[rgba(255,255,255,0.06)]"
-          : "py-5 bg-transparent"
+          ? "py-4 glass border-b border-[rgba(255,255,255,0.06)]"
+          : "py-6 bg-transparent"
       )}
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
         {/* ── Logo ── */}
-        <a href="#" className="flex items-center gap-2.5 group">
+        <a href="#" className="flex flex-col items-center gap-1 group">
           <Image
             src="/exyralogo-transparent.png"
             alt="Exyra Technologies"
-            width={72}
-            height={48}
+            width={56}
+            height={38}
             className="object-contain drop-shadow-[0_0_8px_rgba(0,188,212,0.6)]"
           />
-          <div className="flex items-baseline gap-1.5 leading-none">
-            <span
-              className="text-3xl font-black tracking-tight font-display leading-none"
-              style={{
-                background: "linear-gradient(90deg, #00bcd4, #1457d6)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Exyra
-            </span>
-            <span
-              className="text-2xl font-bold tracking-tight font-display leading-none"
-              style={{
-                background: "linear-gradient(90deg, #1457d6, #8b5cf6)",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              Technologies
-            </span>
-          </div>
+          <span
+            className="text-lg font-black tracking-widest font-display leading-none uppercase"
+            style={{
+              background: "linear-gradient(90deg, #00bcd4, #1457d6)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              letterSpacing: "0.15em",
+            }}
+          >
+            Exyra
+          </span>
         </a>
 
         {/* ── Desktop Nav ── */}
