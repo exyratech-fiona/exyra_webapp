@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
+import Image from "next/image";
 import { GlowButton } from "@/components/ui/GlowButton";
 import { cn } from "@/lib/utils";
 
@@ -47,27 +48,36 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
         {/* ── Logo ── */}
-        <a href="#" className="flex items-baseline gap-2 group">
-          <span
-            className="text-3xl font-black tracking-tight font-display leading-none"
-            style={{
-              background: "linear-gradient(90deg, #00bcd4, #1457d6)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Exyra
-          </span>
-          <span
-            className="text-2xl font-bold tracking-tight font-display leading-none"
-            style={{
-              background: "linear-gradient(90deg, #1457d6, #8b5cf6)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-            }}
-          >
-            Technologies
-          </span>
+        <a href="#" className="flex items-center gap-2.5 group">
+          <Image
+            src="/exyralogo-transparent.png"
+            alt="Exyra Technologies"
+            width={44}
+            height={30}
+            className="object-contain drop-shadow-[0_0_6px_rgba(0,188,212,0.5)]"
+          />
+          <div className="flex items-baseline gap-1.5 leading-none">
+            <span
+              className="text-3xl font-black tracking-tight font-display leading-none"
+              style={{
+                background: "linear-gradient(90deg, #00bcd4, #1457d6)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Exyra
+            </span>
+            <span
+              className="text-2xl font-bold tracking-tight font-display leading-none"
+              style={{
+                background: "linear-gradient(90deg, #1457d6, #8b5cf6)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}
+            >
+              Technologies
+            </span>
+          </div>
         </a>
 
         {/* ── Desktop Nav ── */}
