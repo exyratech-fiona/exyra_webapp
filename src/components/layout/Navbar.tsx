@@ -47,9 +47,9 @@ export function Navbar() {
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
 
         {/* ── Logo — text only ── */}
-        <a href="#" className="flex items-center gap-2 group">
+        <a href="#" className="flex items-center gap-1.5 group">
           <span
-            className="text-4xl font-bold tracking-tight font-display"
+            className="text-3xl font-black tracking-tight font-display"
             style={{
               background: "linear-gradient(90deg, #00bcd4, #1457d6)",
               WebkitBackgroundClip: "text",
@@ -57,6 +57,16 @@ export function Navbar() {
             }}
           >
             Exyra
+          </span>
+          <span
+            className="text-xl font-semibold tracking-wide font-display"
+            style={{
+              background: "linear-gradient(90deg, #1457d6, #8b5cf6)",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+            }}
+          >
+            Technologies
           </span>
         </a>
 
