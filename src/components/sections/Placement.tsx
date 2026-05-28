@@ -5,17 +5,17 @@ import { TrendingUp, Building, Clock, Target, CheckCircle, ArrowRight } from "lu
 import { GlowButton } from "@/components/ui/GlowButton";
 
 const partners = [
-  "AWS", "Meta", "Stripe", "Google", "Anthropic", "Databricks",
-  "Goldman Sachs", "Netflix", "Airbnb", "Coinbase", "OpenAI", "Snowflake",
+  "TCS", "Infosys", "Wipro", "Cognizant", "Zoho", "Freshworks",
+  "Juspay", "Chargebee", "Sigmoid", "BrowserStack", "Postman", "Razorpay",
 ];
 
 const placements = [
-  { role: "ML Infrastructure Engineer", company: "Meta", package: "$340k", time: "6 months" },
-  { role: "Senior DevOps Engineer", company: "Stripe", package: "$290k", time: "3 months" },
-  { role: "AI Platform Engineer", company: "Anthropic", package: "$380k", time: "4 months" },
-  { role: "Cloud Architect", company: "AWS", package: "$260k", time: "5 months" },
-  { role: "LLM Engineer", company: "Databricks", package: "$310k", time: "3 months" },
-  { role: "Platform Engineering Lead", company: "Netflix", package: "$350k", time: "7 months" },
+  { role: "AI/ML Engineer",            company: "Zoho Corp",          package: "₹12 LPA", time: "3 months" },
+  { role: "DevOps Engineer",           company: "Freshworks",         package: "₹10 LPA", time: "2 months" },
+  { role: "Cloud Solutions Engineer",  company: "Juspay Technologies",package: "₹14 LPA", time: "4 months" },
+  { role: "LLM Engineer",              company: "Sigmoid Analytics",  package: "₹11 LPA", time: "3 months" },
+  { role: "Platform Engineer",         company: "Chargebee",          package: "₹9.5 LPA",time: "5 months" },
+  { role: "MLOps Engineer",            company: "BrowserStack",       package: "₹13 LPA", time: "4 months" },
 ];
 
 const supportFeatures = [
@@ -29,7 +29,7 @@ export function Placement() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="placement" ref={ref} className="relative py-24 overflow-hidden">
+    <section id="placement" ref={ref} className="relative py-16 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute right-0 top-1/3 w-[500px] h-[500px] rounded-full bg-[rgba(0,230,118,0.05)] blur-[100px]" />
       </div>
@@ -40,7 +40,7 @@ export function Placement() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-10"
         >
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-6 border border-[rgba(0,230,118,0.3)]">
             <span className="text-xs text-[#00e676] font-medium uppercase tracking-wider">Placement & Careers</span>
@@ -56,12 +56,12 @@ export function Placement() {
         </motion.div>
 
         {/* Stats row */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-10">
           {[
-            { label: "Placement Rate", value: "98%", color: "#00e676" },
+            { label: "Placement Rate",    value: "98%",       color: "#00e676" },
             { label: "Avg. Time to Hire", value: "< 90 days", color: "#00bcd4" },
-            { label: "Avg. Package", value: "$180k+", color: "#1457d6" },
-            { label: "Partner Companies", value: "150+", color: "#8b5cf6" },
+            { label: "Avg. Package",      value: "₹12 LPA+", color: "#1457d6" },
+            { label: "Partner Companies", value: "50+",       color: "#8b5cf6" },
           ].map((stat, i) => (
             <motion.div
               key={stat.label}

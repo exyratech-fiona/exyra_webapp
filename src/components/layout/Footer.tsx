@@ -105,12 +105,9 @@ export function Footer() {
         {/* Bottom */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-4 mt-6">
           <p className="text-xs text-[#4a627e] font-sans">© {new Date().getFullYear()} Exyra Technologies. All rights reserved.</p>
-          <div className="flex items-center gap-1 text-xs font-sans text-[#4a627e]">
-            <span>Built with</span>
-            <span className="mx-1 font-semibold" style={{
-              background: "linear-gradient(90deg,#00bcd4,#8b5cf6)",
-              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-            }}>Next.js 15 · React 19 · Three.js</span>
+          <div className="flex items-center gap-2 text-xs font-sans text-[#4a627e]">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00e676] animate-pulse" />
+            <span>All systems operational</span>
           </div>
         </div>
       </div>

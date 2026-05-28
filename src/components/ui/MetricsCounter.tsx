@@ -66,10 +66,10 @@ export function MetricCounter({
 
 export function MetricsGrid() {
   const metrics = [
-    { value: 2500, suffix: "+", label: "Engineers Trained", color: "cyan" as const },
-    { value: 98, suffix: "%", label: "Placement Rate", color: "green" as const },
-    { value: 150, suffix: "+", label: "Enterprise Clients", color: "blue" as const },
-    { value: 45, suffix: "+", label: "Live Projects", color: "purple" as const },
+    { value: 50,  suffix: "+", label: "Engineers Trained", color: "cyan"   as const },
+    { value: 98,  suffix: "%", label: "Placement Rate",    color: "green"  as const },
+    { value: 50,  suffix: "+", label: "AI Projects",       color: "blue"   as const },
+    { value: 25,  suffix: "+", label: "DevOps Projects",   color: "purple" as const },
   ];
 
   return (

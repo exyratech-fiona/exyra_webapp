@@ -37,10 +37,10 @@ const placedAt = ["TCS", "Infosys", "Wipro", "Cognizant", "Zoho"];
 
 function HeroStats() {
   const stats = [
-    { value: "2,500+", label: "Engineers Trained",  color: "#00bcd4" },
-    { value: "98%",    label: "Placement Rate",     color: "#1457d6" },
-    { value: "150+",   label: "Enterprise Clients", color: "#1457d6" },
-    { value: "45+",    label: "Live Projects",      color: "#8b5cf6" },
+    { value: "50+",  label: "Engineers Trained", color: "#00bcd4" },
+    { value: "98%",  label: "Placement Rate",    color: "#1457d6" },
+    { value: "50+",  label: "AI Projects",       color: "#1457d6" },
+    { value: "25+",  label: "DevOps Projects",   color: "#8b5cf6" },
   ];
   return (
     <div className="flex flex-wrap gap-6 mt-10">

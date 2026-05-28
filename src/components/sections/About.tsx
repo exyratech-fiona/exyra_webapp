@@ -24,7 +24,7 @@ export function About() {
         style={{ background: "radial-gradient(circle, rgba(0,209,255,0.04), transparent 70%)", filter: "blur(40px)" }} />
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="max-w-3xl mb-16">
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7 }} className="max-w-3xl mb-10">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 font-sans"
             style={{ background: "rgba(0,209,255,0.06)", border: "1px solid rgba(0,209,255,0.15)" }}>
             <span className="text-xs text-[#00bcd4] font-medium tracking-widest">ABOUT EXYRA</span>
@@ -44,7 +44,7 @@ export function About() {
 
         {/* Metrics */}
         <motion.div initial={{ opacity: 0, y: 20 }} animate={inView ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.7, delay: 0.2 }}
-          className="rounded-2xl p-8 mb-16" style={{ background: "rgba(10,22,40,0.6)", border: "1px solid rgba(0,209,255,0.1)" }}>
+          className="rounded-2xl p-8 mb-10" style={{ background: "rgba(10,22,40,0.6)", border: "1px solid rgba(0,209,255,0.1)" }}>
           <MetricsGrid />
         </motion.div>
 

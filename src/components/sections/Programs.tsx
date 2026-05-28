@@ -107,7 +107,7 @@ export function Programs() {
   const program = programs[active];
 
   return (
-    <section id="programs" ref={ref} className="relative py-24 overflow-hidden">
+    <section id="programs" ref={ref} className="relative py-16 overflow-hidden">
       <div className="absolute right-0 top-1/2 w-[600px] h-[600px] rounded-full bg-[rgba(0,188,212,0.04)] blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6">
@@ -116,7 +116,7 @@ export function Programs() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center max-w-2xl mx-auto mb-16"
+          className="text-center max-w-2xl mx-auto mb-10"
         >
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-6 border border-[rgba(0,188,212,0.3)]">
             <span className="text-xs text-[#00bcd4] font-medium uppercase tracking-wider">Engineering Programs</span>

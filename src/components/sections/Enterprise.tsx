@@ -67,7 +67,7 @@ export function Enterprise() {
           initial={{ opacity: 0, y: 30 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="max-w-2xl mb-16"
+          className="max-w-2xl mb-10"
         >
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-6 border border-[rgba(20,87,214,0.3)]">
             <span className="text-xs text-[#1457d6] font-medium uppercase tracking-wider">Enterprise</span>
@@ -83,7 +83,7 @@ export function Enterprise() {
         </motion.div>
 
         {/* Services grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
           {services.map((service, i) => (
             <motion.div
               key={service.title}

@@ -107,7 +107,7 @@ export function Contact() {
         <motion.div
           initial={{ opacity: 0, y: 30 }} animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7 }}
-          className="text-center max-w-2xl mx-auto mb-16">
+          className="text-center max-w-2xl mx-auto mb-10">
           <div className="inline-flex items-center gap-2 rounded-full px-4 py-1.5 mb-6 font-sans"
             style={{ background: "rgba(0,209,255,0.06)", border: "1px solid rgba(0,209,255,0.2)" }}>
             <span className="w-1.5 h-1.5 rounded-full bg-[#00bcd4] animate-pulse" />
