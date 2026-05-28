@@ -49,19 +49,48 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-[88px]">
 
-        {/* ── Logo: mark above, EXYRA below ── */}
-        <a href="#" className="flex flex-col items-center justify-center gap-0.5 group shrink-0">
+        {/* ── Logo ── */}
+        <a
+          href="#"
+          className="relative flex flex-col items-center justify-center shrink-0 group"
+          style={{ gap: "5px", width: "88px" }}
+        >
+          {/* Ambient glow bloom behind mark */}
+          <div
+            className="absolute pointer-events-none"
+            style={{
+              top: "2px",
+              left: "50%",
+              transform: "translateX(-50%)",
+              width: "72px",
+              height: "36px",
+              background: "radial-gradient(ellipse, rgba(20,87,214,0.32) 0%, rgba(0,188,212,0.12) 50%, transparent 75%)",
+              filter: "blur(10px)",
+              borderRadius: "50%",
+            }}
+          />
+
+          {/* Mark — sized so visual glyph ≈ text width */}
           <Image
             src="/exyralogo-transparent.png"
-            alt="Exyra"
-            width={58}
-            height={38}
-            className="object-contain drop-shadow-[0_0_10px_rgba(0,188,212,0.65)]"
-          />
-          <span
-            className="text-[15px] font-black font-display leading-none tracking-[0.25em] uppercase"
+            alt="Exyra Technologies"
+            width={62}
+            height={42}
+            className="object-contain relative z-10"
             style={{
-              background: "linear-gradient(90deg, #00bcd4, #1457d6)",
+              filter:
+                "drop-shadow(0 0 6px rgba(0,188,212,0.55)) drop-shadow(0 1px 14px rgba(20,87,214,0.35))",
+            }}
+          />
+
+          {/* EXYRA — letter-spacing padded left to stay truly centered */}
+          <span
+            className="relative z-10 font-display font-black leading-none uppercase text-center w-full"
+            style={{
+              fontSize: "12px",
+              letterSpacing: "0.32em",
+              paddingLeft: "0.32em", /* compensates tracking offset on first char */
+              background: "linear-gradient(90deg, #2ec6e0 0%, #1457d6 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
