@@ -92,7 +92,7 @@ export function Contact() {
     "w-full bg-[rgba(255,255,255,0.03)] border border-[rgba(255,255,255,0.08)] rounded-xl px-4 py-3 text-sm text-white placeholder-[#4a627e] focus:outline-none focus:border-[rgba(0,188,212,0.5)] focus:bg-[rgba(0,188,212,0.03)] transition-all duration-200 font-sans";
 
   return (
-    <section id="contact" ref={ref} className="relative py-24 overflow-hidden" style={{ background: "#060e1e" }}>
+    <section id="contact" ref={ref} className="relative py-12 overflow-hidden" style={{ background: "#060e1e" }}>
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 grid-bg opacity-10" />
         <div className="absolute left-0 bottom-0 w-[600px] h-[600px] rounded-full blur-[120px]"

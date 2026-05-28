@@ -62,7 +62,7 @@ export function GenAI() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="genai" ref={ref} className="relative py-24 overflow-hidden">
+    <section id="genai" ref={ref} className="relative py-12 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[rgba(139,92,246,0.05)] blur-[120px]" />
       </div>
@@ -93,7 +93,7 @@ export function GenAI() {
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, delay: 0.2 }}
-          className="flex flex-wrap items-center justify-center gap-3 mb-16"
+          className="flex flex-wrap items-center justify-center gap-3 mb-8"
         >
           {agentFlow.map((step, i) => (
             <div key={step.id} className="flex items-center gap-3">

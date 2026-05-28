@@ -83,7 +83,7 @@ export function TechStack() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="tech-stack" ref={ref} className="relative py-24 overflow-hidden">
+    <section id="tech-stack" ref={ref} className="relative py-12 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] rounded-full bg-[rgba(20,87,214,0.06)] blur-[120px]" />
       </div>
@@ -109,7 +109,7 @@ export function TechStack() {
         </motion.div>
 
         {/* Tech marquee */}
-        <div className="relative mb-16 overflow-hidden">
+        <div className="relative mb-8 overflow-hidden">
           <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-[#060e1e] to-transparent pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-l from-[#060e1e] to-transparent pointer-events-none" />
           <div className="flex gap-4 animate-marquee">

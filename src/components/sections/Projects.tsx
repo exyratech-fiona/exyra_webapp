@@ -58,7 +58,7 @@ export function Projects() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.05 });
 
   return (
-    <section id="projects" ref={ref} className="relative py-24 overflow-hidden">
+    <section id="projects" ref={ref} className="relative py-12 overflow-hidden">
       <div className="absolute inset-0 grid-bg opacity-10 pointer-events-none" />
       <div className="absolute top-0 left-0 w-[500px] h-[500px] rounded-full bg-[rgba(0,188,212,0.04)] blur-[120px] pointer-events-none" />
 

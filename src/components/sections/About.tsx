@@ -18,7 +18,7 @@ export function About() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="about" ref={ref} className="relative py-28 overflow-hidden" style={{ background: "#060e1e" }}>
+    <section id="about" ref={ref} className="relative py-14 overflow-hidden" style={{ background: "#060e1e" }}>
       <div className="absolute inset-0 grid-bg opacity-100 pointer-events-none" />
       <div className="absolute left-0 top-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
         style={{ background: "radial-gradient(circle, rgba(0,209,255,0.04), transparent 70%)", filter: "blur(40px)" }} />

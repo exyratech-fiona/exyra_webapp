@@ -82,7 +82,7 @@ export function Testimonials() {
   const next = () => { setAutoplay(false); setCurrent((c) => (c + 1) % testimonials.length); };
 
   return (
-    <section id="testimonials" ref={ref} className="relative py-24 overflow-hidden">
+    <section id="testimonials" ref={ref} className="relative py-12 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[rgba(20,87,214,0.05)] blur-[120px]" />
       </div>

@@ -24,7 +24,7 @@ export function DevOps() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <section id="devops" ref={ref} className="relative py-24 overflow-hidden">
+    <section id="devops" ref={ref} className="relative py-12 overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute right-0 top-0 w-[500px] h-[500px] rounded-full bg-[rgba(0,230,118,0.04)] blur-[100px]" />
       </div>
