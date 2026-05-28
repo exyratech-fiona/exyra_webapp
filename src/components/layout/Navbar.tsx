@@ -49,24 +49,24 @@ export function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-[88px]">
 
-        {/* ── Logo: mark above, EXYRA below — left aligned ── */}
-        <a href="#" className="flex flex-col items-center gap-1 group shrink-0 w-[90px]">
+        {/* ── Logo: mark above, EXYRA below ── */}
+        <a href="#" className="flex flex-col items-center justify-center gap-0.5 group shrink-0">
           <Image
             src="/exyralogo-transparent.png"
             alt="Exyra"
-            width={80}
-            height={54}
-            className="object-contain w-full drop-shadow-[0_0_12px_rgba(0,188,212,0.6)]"
+            width={58}
+            height={38}
+            className="object-contain drop-shadow-[0_0_10px_rgba(0,188,212,0.65)]"
           />
           <span
-            className="text-xl font-black font-display leading-none tracking-[0.22em] uppercase w-full text-center"
+            className="text-[15px] font-black font-display leading-none tracking-[0.25em] uppercase"
             style={{
               background: "linear-gradient(90deg, #00bcd4, #1457d6)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
             }}
           >
-            Exyra
+            EXYRA
           </span>
         </a>
 
