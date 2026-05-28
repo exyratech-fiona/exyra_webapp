@@ -1,6 +1,5 @@
 "use client";
 import { Github, Linkedin, Twitter, Youtube, Instagram, Mail, MapPin, Phone } from "lucide-react";
-import Image from "next/image";
 
 const footerLinks = {
   Programs: [
@@ -48,7 +47,8 @@ export function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <a href="#" className="flex items-center mb-6 opacity-90 hover:opacity-100 transition-opacity">
-              <Image src="/exyralogo1.png" alt="Exyra Technologies" width={80} height={53} style={{ objectFit: "contain" }} />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/exyra-logo.png" alt="Exyra Technologies" style={{ height: "56px", width: "auto", display: "block" }} />
             </a>
             <p className="text-sm text-[#4a627e] font-sans leading-relaxed mb-6 max-w-xs">
               Building the next generation of AI, Cloud, and DevOps engineers with enterprise-grade, real-world infrastructure.
