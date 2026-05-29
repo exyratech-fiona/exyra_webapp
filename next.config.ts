@@ -10,6 +10,8 @@ const nextConfig: NextConfig = {
   experimental: {
     optimizePackageImports: ["lucide-react", "framer-motion"],
   },
+  // Turbopack configuration for Next.js 16
+  turbopack: {},
   // Allow Three.js WASM builds
   webpack(config) {
     config.externals = config.externals || [];
