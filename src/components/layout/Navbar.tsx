@@ -2,7 +2,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown } from "lucide-react";
-import Image from "next/image";
 import { GlowButton } from "@/components/ui/GlowButton";
 import { cn } from "@/lib/utils";
 
@@ -10,10 +9,15 @@ const navLinks = [
   {
     label: "Programs",
     items: [
-      { label: "AI Engineering",         href: "#programs" },
-      { label: "AWS Cloud",              href: "#aws-cloud" },
-      { label: "DevOps",                 href: "#devops" },
-      { label: "Generative AI & LLMOps", href: "#genai" },
+      { label: "AWS Cloud",        href: "#aws-cloud"       },
+      { label: "DevOps",           href: "#devops"          },
+      { label: "AWS + DevOps",     href: "#aws-devops"      },
+      { label: "Cloud Computing",  href: "#cloud-computing" },
+      { label: "Linux & Shell",    href: "#linux"           },
+      { label: "Web Development",  href: "#web-dev"         },
+      { label: "AI / ML",          href: "#ai-ml"           },
+      { label: "Generative AI",    href: "#genai"           },
+      { label: "Human Resources",  href: "#hr"              },
     ],
   },
   { label: "Projects",   href: "#projects"   },
@@ -52,7 +56,7 @@ export function Navbar() {
           : "none",
       }}
     >
-      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-[96px]">
+      <div className="max-w-7xl mx-auto px-8 flex items-center justify-between h-[72px]">
 
         {/* ── Logo ── */}
         <a href="#" className="shrink-0">
@@ -61,7 +65,7 @@ export function Navbar() {
             src="/exyra-logo.png"
             alt="Exyra Technologies"
             className="transition-all duration-300 brightness-[0.92] hover:brightness-105 hover:scale-[1.04]"
-            style={{ height: "62px", width: "auto", display: "block" }}
+            style={{ height: "48px", width: "auto", display: "block" }}
           />
         </a>
 
@@ -83,19 +87,21 @@ export function Navbar() {
                       animate={{ opacity: 1, y: 0, scale: 1 }}
                       exit={{ opacity: 0, y: 8, scale: 0.97 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-1 w-56 rounded-xl border py-2 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
+                      className="absolute top-full left-0 mt-1 w-[420px] rounded-xl border p-3 shadow-[0_20px_60px_rgba(0,0,0,0.6)]"
                       style={{
                         background: "rgba(4,10,26,0.97)",
                         border: "1px solid rgba(0,188,212,0.15)",
                         backdropFilter: "blur(20px)",
                       }}
                     >
-                      {link.items.map((item) => (
-                        <a key={item.label} href={item.href}
-                          className="block px-5 py-3 text-[14px] text-[#a8c0e0] hover:text-white hover:bg-[rgba(20,87,214,0.15)] transition-all">
-                          {item.label}
-                        </a>
-                      ))}
+                      <div className="grid grid-cols-2 gap-1">
+                        {link.items.map((item) => (
+                          <a key={item.label} href={item.href}
+                            className="block px-4 py-2.5 text-[13px] text-[#a8c0e0] hover:text-white hover:bg-[rgba(20,87,214,0.15)] rounded-lg transition-all">
+                            {item.label}
+                          </a>
+                        ))}
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -111,9 +117,6 @@ export function Navbar() {
 
         {/* ── CTA ── */}
         <div className="hidden lg:flex items-center gap-4">
-          <a href="#contact" className="text-[13.5px] font-medium tracking-wide text-[#7a92b4] hover:text-[#c8dcf4] transition-colors duration-200">
-            Sign in
-          </a>
           <GlowButton href="#contact" size="sm">Book Consultation →</GlowButton>
         </div>
 

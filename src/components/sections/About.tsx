@@ -8,10 +8,10 @@ import { MetricsGrid } from "@/components/ui/MetricsCounter";
 const pillars = [
   { icon: Brain,  title: "AI-First Curriculum",      description: "Every program is built around real AI systems — LLMs, RAG pipelines, AI Agents, and production MLOps workflows.", color: "#00bcd4" },
   { icon: Globe,  title: "Cloud-Native Architecture", description: "AWS, GCP, multi-cloud strategies, EKS clusters, Serverless, and infrastructure as code with Terraform.",          color: "#1457d6" },
-  { icon: Layers, title: "Enterprise Projects",       description: "Work on real Fortune 500-grade projects. Not toy demos — full production systems with CI/CD, monitoring, and SLAs.", color: "#1457d6" },
+  { icon: Layers, title: "Real Client Projects",       description: "Work on projects deployed for actual clients. Not toy demos — full systems with CI/CD, monitoring, and documentation.", color: "#1457d6" },
   { icon: Cpu,    title: "LLM Engineering",           description: "Fine-tune Llama, deploy Claude APIs, build MCP servers, optimize inference with vLLM and TensorRT-LLM.",           color: "#8b5cf6" },
   { icon: Shield, title: "DevSecOps",                 description: "Security-first engineering: vault secrets, network policies, RBAC, compliance automation, and threat detection.",    color: "#00bcd4" },
-  { icon: Zap,    title: "Instant Placement",         description: "98% placement within 90 days. Direct connects to our 150+ enterprise partner network.",                            color: "#1457d6" },
+  { icon: Zap,    title: "Placement Support",          description: "98% placement rate. Direct connects to our 50+ hiring partner network across Tamil Nadu and beyond.",          color: "#1457d6" },
 ];
 
 export function About() {

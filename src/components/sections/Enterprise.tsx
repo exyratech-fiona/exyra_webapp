@@ -26,30 +26,30 @@ const services = [
   {
     icon: Headphones,
     title: "24/7 Platform Support",
-    description: "Dedicated SRE support for your Kubernetes clusters, CI/CD pipelines, and AI infrastructure. 99.9% SLA guaranteed.",
+    description: "Ongoing support for your Kubernetes clusters, CI/CD pipelines, and cloud infrastructure. Available for Tamil Nadu–based teams.",
     color: "#8b5cf6",
   },
   {
     icon: Users2,
     title: "Custom Training Programs",
-    description: "Tailored upskilling programs for your engineering org. 50–500 engineers. Custom curriculum, private cloud environments.",
+    description: "Tailored upskilling programs for your engineering team. Batch or one-on-one formats. Custom curriculum aligned to your tech stack.",
     color: "#1457d6",
   },
   {
     icon: TrendingUp,
     title: "LLM Cost Optimization",
-    description: "Reduce LLM inference costs by 60–80% through caching, routing, quantization, and model selection strategies.",
+    description: "Practical LLM cost review: caching strategies, model selection, prompt optimization, and right-sizing inference infrastructure.",
     color: "#00bcd4",
   },
 ];
 
 const clients = [
-  "Fortune 500 Companies",
-  "AI Startups",
-  "FinTech Leaders",
-  "HealthTech Innovators",
-  "E-Commerce Giants",
-  "Government Agencies",
+  "IT Services Companies",
+  "Tech Startups",
+  "SaaS Product Teams",
+  "E-Commerce Businesses",
+  "Engineering Colleges",
+  "SME Tech Teams",
 ];
 
 export function Enterprise() {
@@ -135,7 +135,7 @@ export function Enterprise() {
                 Talk to Enterprise Team <ArrowRight size={16} />
               </GlowButton>
               <GlowButton href="#contact" variant="secondary" size="lg" className="whitespace-nowrap">
-                Download Enterprise Brief
+                Schedule a Free Call
               </GlowButton>
             </div>
           </div>

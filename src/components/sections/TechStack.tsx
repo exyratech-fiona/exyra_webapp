@@ -2,81 +2,83 @@
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 
+const si = (slug: string) => `https://skillicons.dev/icons?i=${slug}`;
+const sc = (slug: string, hex: string) => `https://cdn.simpleicons.org/${slug}/${hex}`;
+
 const techCategories = [
   {
     category: "AI & LLM",
     color: "#1457d6",
     items: [
-      { name: "Claude AI", logo: "🤖" },
-      { name: "Llama 3", logo: "🦙" },
-      { name: "OpenAI", logo: "⚡" },
-      { name: "LangChain", logo: "🔗" },
-      { name: "AWS Bedrock", logo: "☁️" },
+      { name: "Claude AI",    icon: sc("anthropic",   "00bcd4") },
+      { name: "Llama 3",      icon: sc("meta",        "1877F2") },
+      { name: "Python",       icon: si("python")                },
+      { name: "LangChain",    icon: sc("langchain",   "00bcd4") },
+      { name: "Hugging Face", icon: sc("huggingface", "FFD21E") },
     ],
   },
   {
     category: "Cloud",
     color: "#00bcd4",
     items: [
-      { name: "AWS", logo: "☁️" },
-      { name: "Terraform", logo: "🏗️" },
-      { name: "CDK", logo: "⚡" },
-      { name: "CloudFormation", logo: "📋" },
-      { name: "Pulumi", logo: "🌀" },
+      { name: "AWS",        icon: si("aws")        },
+      { name: "Azure",      icon: si("azure")      },
+      { name: "GCP",        icon: si("gcp")        },
+      { name: "Terraform",  icon: si("terraform")  },
+      { name: "Cloudflare", icon: si("cloudflare") },
     ],
   },
   {
     category: "Containers",
     color: "#00e676",
     items: [
-      { name: "Kubernetes", logo: "⚙️" },
-      { name: "Docker", logo: "🐳" },
-      { name: "Helm", logo: "⛵" },
-      { name: "ArgoCD", logo: "🔄" },
-      { name: "Istio", logo: "🕸️" },
+      { name: "Kubernetes", icon: si("kubernetes")              },
+      { name: "Docker",     icon: si("docker")                  },
+      { name: "Helm",       icon: sc("helm",   "0DB7ED")        },
+      { name: "Podman",     icon: sc("podman", "892CA0")        },
+      { name: "Istio",      icon: sc("istio",  "466BB0")        },
     ],
   },
   {
     category: "Observability",
     color: "#8b5cf6",
     items: [
-      { name: "Prometheus", logo: "📊" },
-      { name: "Grafana", logo: "📈" },
-      { name: "ELK Stack", logo: "🔍" },
-      { name: "Jaeger", logo: "🔭" },
-      { name: "PagerDuty", logo: "🚨" },
+      { name: "Prometheus", icon: si("prometheus")               },
+      { name: "Grafana",    icon: si("grafana")                  },
+      { name: "ELK Stack",  icon: si("elasticsearch")            },
+      { name: "Datadog",    icon: sc("datadog",    "632CA6")     },
+      { name: "PagerDuty",  icon: sc("pagerduty",  "06AC38")     },
     ],
   },
   {
     category: "CI/CD & Automation",
     color: "#1457d6",
     items: [
-      { name: "GitHub Actions", logo: "🚀" },
-      { name: "Jenkins", logo: "🔧" },
-      { name: "Ansible", logo: "📝" },
-      { name: "Vault", logo: "🔐" },
-      { name: "Nexus", logo: "📦" },
+      { name: "GitHub Actions", icon: si("githubactions")         },
+      { name: "Jenkins",        icon: si("jenkins")               },
+      { name: "ArgoCD",         icon: sc("argo",   "EF7B4D")     },
+      { name: "Ansible",        icon: si("ansible")               },
+      { name: "Vault",          icon: sc("vault",  "FFCF25")     },
     ],
   },
   {
     category: "Data & Backend",
     color: "#00bcd4",
     items: [
-      { name: "PostgreSQL", logo: "🐘" },
-      { name: "Redis", logo: "⚡" },
-      { name: "FastAPI", logo: "🐍" },
-      { name: "Kafka", logo: "📨" },
-      { name: "Pinecone", logo: "🌲" },
+      { name: "PostgreSQL", icon: si("postgresql") },
+      { name: "Redis",      icon: si("redis")      },
+      { name: "FastAPI",    icon: si("fastapi")    },
+      { name: "Kafka",      icon: si("kafka")      },
+      { name: "MongoDB",    icon: si("mongodb")    },
     ],
   },
 ];
 
-// Marquee row of tech names
 const allTech = [
-  "AWS", "Docker", "Kubernetes", "Terraform", "Jenkins", "Claude AI", "Llama",
-  "Bedrock", "LangChain", "OpenAI", "FastAPI", "Python", "ELK", "Prometheus",
-  "Grafana", "GitHub Actions", "Ansible", "Redis", "PostgreSQL", "Vault",
-  "ArgoCD", "Helm", "Istio", "Pinecone", "MLflow", "Kafka", "vLLM",
+  "AWS", "Azure", "GCP", "Docker", "Kubernetes", "Terraform", "Jenkins", "Claude AI", "Llama 3",
+  "LangChain", "Python", "FastAPI", "ELK Stack", "Prometheus",
+  "Grafana", "GitHub Actions", "ArgoCD", "Ansible", "Redis", "PostgreSQL", "Vault",
+  "Podman", "Helm", "Istio", "MongoDB", "Kafka", "Hugging Face", "Cloudflare",
 ];
 
 export function TechStack() {
@@ -104,7 +106,7 @@ export function TechStack() {
             <span className="gradient-text">Enterprise Stack</span>
           </h2>
           <p className="text-[#7a92b4]">
-            Every tool, service, and platform used by top AI companies — learned in production contexts.
+            Every tool, service, and platform used by top engineering teams — practised hands-on in real project environments.
           </p>
         </motion.div>
 
@@ -144,12 +146,20 @@ export function TechStack() {
                     whileHover={{ x: 4 }}
                     className="flex items-center gap-3 p-2 rounded-lg hover:bg-[rgba(255,255,255,0.04)] cursor-default transition-colors"
                   >
-                    <span className="text-xl leading-none">{item.logo}</span>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.icon}
+                      alt={item.name}
+                      width={22}
+                      height={22}
+                      className="shrink-0 rounded-md opacity-80 group-hover:opacity-100 transition-opacity"
+                      onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+                    />
                     <span className="text-sm text-[#7a92b4]">{item.name}</span>
                     <div className="ml-auto h-1 rounded-full bg-[rgba(255,255,255,0.06)] w-16 overflow-hidden">
                       <motion.div
                         initial={{ width: 0 }}
-                        animate={inView ? { width: `${80 + Math.random() * 20}%` } : {}}
+                        animate={inView ? { width: `${75 + i * 5}%` } : {}}
                         transition={{ delay: catIdx * 0.1 + i * 0.05 + 0.5, duration: 0.8 }}
                         className="h-full rounded-full"
                         style={{ background: cat.color }}

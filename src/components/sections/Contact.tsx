@@ -304,7 +304,7 @@ export function Contact() {
                 </button>
 
                 <p className="text-xs text-[#4a627e] text-center font-sans">
-                  No spam. By submitting you agree to our privacy policy.
+                  We'll respond within 4 hours. Your information is never shared.
                 </p>
               </form>
             )}

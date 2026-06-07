@@ -5,50 +5,50 @@ import { ExternalLink, GitBranch, Activity, Boxes } from "lucide-react";
 
 const projects = [
   {
-    title: "Enterprise RAG Platform",
-    description: "Production RAG system serving 10M+ queries/day. ChromaDB + Pinecone hybrid retrieval, Claude claude-sonnet-4-6 orchestration, 99.9% uptime on EKS.",
-    tags: ["Claude AI", "RAG", "EKS", "Pinecone"],
-    metrics: { uptime: "99.9%", queries: "10M+/day", latency: "< 200ms" },
+    title: "RAG-Based HR Resume Screener",
+    description: "Built by our AI Engineering batch. Uses LangChain + ChromaDB to screen resumes against job descriptions. Deployed to a local staffing firm in Coimbatore.",
+    tags: ["LangChain", "ChromaDB", "FastAPI", "Python"],
+    metrics: { batch: "AI Cohort 2", status: "Deployed", stack: "LangChain" },
     color: "#1457d6",
     status: "live",
   },
   {
-    title: "AI-Powered DevOps Copilot",
-    description: "LLM-based infrastructure assistant. Generates Terraform, debugs Kubernetes issues, auto-scales clusters based on ML predictions.",
-    tags: ["LLM", "Terraform", "Kubernetes", "AWS"],
-    metrics: { users: "500+", issues: "95% auto-resolved", savings: "$120k/yr" },
+    title: "AWS Cost Monitoring Dashboard",
+    description: "DevOps batch project. Python + AWS Cost Explorer API aggregates EC2/S3 spend by team, sends weekly Slack alerts, and flags idle resources automatically.",
+    tags: ["AWS", "Python", "Grafana", "Slack API"],
+    metrics: { batch: "DevOps Cohort 3", status: "Deployed", stack: "AWS + Python" },
     color: "#00bcd4",
     status: "live",
   },
   {
-    title: "Real-Time ML Feature Platform",
-    description: "Feast-based feature store with Redis + Kafka streaming. Sub-10ms feature serving for fraud detection and recommendation systems.",
-    tags: ["Feast", "Kafka", "Redis", "Python"],
-    metrics: { latency: "< 10ms", features: "5k+", throughput: "1M/sec" },
+    title: "Kubernetes Monitoring Stack",
+    description: "Full observability setup built end-to-end by students: Prometheus scraping, Grafana dashboards, AlertManager rules, and runbook documentation.",
+    tags: ["Kubernetes", "Prometheus", "Grafana", "Helm"],
+    metrics: { batch: "DevOps Cohort 2", status: "Live", stack: "K8s + Prometheus" },
     color: "#00e676",
     status: "live",
   },
   {
-    title: "Multi-Cloud Governance Platform",
-    description: "Terraform + OPA policy engine managing 500+ AWS accounts. Automated compliance reporting, cost allocation, and drift detection.",
-    tags: ["Terraform", "OPA", "AWS", "Python"],
-    metrics: { accounts: "500+", cost: "40% saved", compliance: "100%" },
+    title: "CI/CD Pipeline for E-Commerce",
+    description: "GitHub Actions pipeline built for a local Coimbatore e-commerce startup. Auto-deploys to AWS EC2 on merge, runs tests, and notifies the team on Slack.",
+    tags: ["GitHub Actions", "AWS EC2", "Docker", "Terraform"],
+    metrics: { batch: "DevOps Cohort 1", status: "In Production", stack: "GHA + AWS" },
     color: "#8b5cf6",
     status: "live",
   },
   {
-    title: "LLM Evaluation Framework",
-    description: "Open-source evaluation harness for LLM applications. Automated red-teaming, hallucination detection, and production quality gates.",
-    tags: ["Evals", "Claude", "Python", "GitHub Actions"],
-    metrics: { tests: "10k+", models: "12 benchmarked", accuracy: "97%" },
+    title: "GenAI Marketing Copy Generator",
+    description: "LLM-powered tool that generates Tamil and English product descriptions for a retail client. Built with LangChain + Claude API. Used live in the client's workflow.",
+    tags: ["Claude AI", "LangChain", "FastAPI", "React"],
+    metrics: { batch: "GenAI Cohort 1", status: "Live", stack: "Claude + FastAPI" },
     color: "#1457d6",
-    status: "beta",
+    status: "live",
   },
   {
-    title: "AI Security Operations Platform",
-    description: "Falco + AI-powered threat detection. Automatic incident classification, playbook generation, and SOAR integration.",
-    tags: ["Falco", "Claude AI", "Grafana", "PagerDuty"],
-    metrics: { detection: "< 30s", incidents: "200+/day", accuracy: "99.2%" },
+    title: "Linux System Health Monitor",
+    description: "Bash + Python monitoring script for production VMs. Alerts on CPU/memory/disk thresholds via email. Deployed on 5 servers at a local IT services company.",
+    tags: ["Bash", "Python", "Cron", "Linux"],
+    metrics: { batch: "Linux Cohort 1", status: "Deployed", stack: "Bash + Python" },
     color: "#00bcd4",
     status: "live",
   },
@@ -71,14 +71,14 @@ export function Projects() {
           className="text-center max-w-2xl mx-auto mb-10"
         >
           <div className="inline-flex items-center gap-2 glass rounded-full px-4 py-1.5 mb-6 border border-[rgba(0,188,212,0.3)]">
-            <span className="text-xs text-[#00bcd4] font-medium uppercase tracking-wider">Real Enterprise Projects</span>
+            <span className="text-xs text-[#00bcd4] font-medium uppercase tracking-wider">Graduate Projects</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-bold font-display leading-tight mb-4">
-            <span className="text-white">Systems in</span>{" "}
-            <span className="gradient-text">Production</span>
+            <span className="text-white">What Our Students</span>{" "}
+            <span className="gradient-text">Actually Built</span>
           </h2>
           <p className="text-[#7a92b4]">
-            Not capstone projects. Not demos. Real production systems running at scale, built during training.
+            Real projects, deployed for real clients. Our graduates leave with working systems in their portfolio — not just certificates.
           </p>
         </motion.div>
 

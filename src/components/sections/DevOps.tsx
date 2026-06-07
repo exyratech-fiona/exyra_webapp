@@ -5,12 +5,12 @@ import { TerminalSimulator } from "@/components/ui/TerminalSimulator";
 import { GitBranch, Package, Activity, Shield } from "lucide-react";
 
 const pipeline = [
-  { label: "Code", icon: "📝", color: "#1457d6" },
-  { label: "Build", icon: "🔨", color: "#00bcd4" },
-  { label: "Test", icon: "✅", color: "#00e676" },
-  { label: "Deploy", icon: "🚀", color: "#8b5cf6" },
-  { label: "Monitor", icon: "📊", color: "#1457d6" },
-  { label: "Optimize", icon: "⚡", color: "#00bcd4" },
+  { label: "Code",     step: "01", color: "#1457d6" },
+  { label: "Build",    step: "02", color: "#00bcd4" },
+  { label: "Test",     step: "03", color: "#00e676" },
+  { label: "Deploy",   step: "04", color: "#8b5cf6" },
+  { label: "Monitor",  step: "05", color: "#1457d6" },
+  { label: "Optimize", step: "06", color: "#00bcd4" },
 ];
 
 const features = [
@@ -90,7 +90,7 @@ export function DevOps() {
                       className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium"
                       style={{ background: `${step.color}15`, border: `1px solid ${step.color}40`, color: step.color }}
                     >
-                      <span>{step.icon}</span>
+                      <span className="font-mono text-[10px] opacity-50">{step.step}</span>
                       {step.label}
                     </motion.div>
                     {i < pipeline.length - 1 && (

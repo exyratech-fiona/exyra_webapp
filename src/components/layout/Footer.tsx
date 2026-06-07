@@ -1,29 +1,30 @@
 "use client";
 import { Github, Linkedin, Twitter, Youtube, Instagram, Mail, MapPin, Phone } from "lucide-react";
 
-const footerLinks = {
+type FooterLink = { label: string; href: string; soon?: boolean };
+const footerLinks: { [key: string]: FooterLink[] } = {
   Programs: [
-    { label: "AI Engineering",        href: "#programs" },
-    { label: "AWS Cloud",             href: "#aws-cloud" },
-    { label: "Kubernetes & DevOps",   href: "#devops"   },
-    { label: "Generative AI",         href: "#genai"    },
-    { label: "LLMOps",                href: "#genai"    },
-    { label: "MCP Servers",           href: "#programs" },
+    { label: "AWS Cloud",        href: "#aws-cloud"      },
+    { label: "DevOps",           href: "#devops"         },
+    { label: "AWS + DevOps",     href: "#aws-devops"     },
+    { label: "AI / ML",          href: "#ai-ml"          },
+    { label: "Generative AI",    href: "#genai"          },
+    { label: "Linux & Shell",    href: "#linux"          },
   ],
   Resources: [
-    { label: "Documentation",    href: "#" },
-    { label: "Blog",             href: "#" },
-    { label: "Case Studies",     href: "#" },
-    { label: "Whitepapers",      href: "#" },
-    { label: "Architecture",     href: "#architecture" },
+    { label: "Documentation",  href: "#", soon: true  },
+    { label: "Blog",           href: "#", soon: true  },
+    { label: "Case Studies",   href: "#", soon: true  },
+    { label: "Whitepapers",    href: "#", soon: true  },
+    { label: "Architecture",   href: "#architecture"  },
   ],
   Company: [
-    { label: "About Exyra",     href: "#about"      },
-    { label: "Enterprise",      href: "#enterprise" },
-    { label: "Careers",         href: "#placement"  },
-    { label: "Contact",         href: "#contact"    },
-    { label: "Privacy Policy",  href: "#"           },
-    { label: "Terms of Service",href: "#"           },
+    { label: "About Exyra",      href: "#about"      },
+    { label: "Enterprise",       href: "#enterprise" },
+    { label: "Careers",          href: "#placement"  },
+    { label: "Contact",          href: "#contact"    },
+    { label: "Privacy Policy",   href: "#", soon: true },
+    { label: "Terms of Service", href: "#", soon: true },
   ],
 };
 
@@ -81,9 +82,16 @@ export function Footer() {
             <div key={category}>
               <h4 className="text-sm font-bold text-[#e2eaf6] font-display tracking-wider mb-4">{category.toUpperCase()}</h4>
               <ul className="space-y-2">
-                {links.map(({ label, href }) => (
+                {links.map(({ label, href, soon }) => (
                   <li key={label}>
-                    <a href={href} className="text-sm text-[#4a627e] font-sans hover:text-[#00bcd4] transition-colors duration-200">{label}</a>
+                    {soon ? (
+                      <span className="flex items-center gap-1.5 text-sm text-[#2e4460] font-sans cursor-default select-none">
+                        {label}
+                        <span className="text-[9px] px-1.5 py-0.5 rounded-full leading-none" style={{ background: "rgba(0,188,212,0.06)", border: "1px solid rgba(0,188,212,0.12)", color: "#2a4a6a" }}>SOON</span>
+                      </span>
+                    ) : (
+                      <a href={href} className="text-sm text-[#4a627e] font-sans hover:text-[#00bcd4] transition-colors duration-200">{label}</a>
+                    )}
                   </li>
                 ))}
               </ul>

@@ -14,7 +14,7 @@ const AIOrb = lazy(() =>
 const floatingTech = [
   { label: "Claude AI",   x: "4%",  y: "10%", delay: 0.2, color: "#00bcd4" },
   { label: "Kubernetes",  x: "58%", y: "6%",  delay: 0.4, color: "#8b5cf6" },
-  { label: "AWS Bedrock", x: "70%", y: "68%", delay: 0.6, color: "#00bcd4" },
+  { label: "LangChain",   x: "70%", y: "68%", delay: 0.6, color: "#00bcd4" },
   { label: "Terraform",   x: "2%",  y: "72%", delay: 0.8, color: "#1457d6" },
   { label: "LLMOps",      x: "38%", y: "86%", delay: 1.0, color: "#00e676" },
 ];
@@ -22,15 +22,15 @@ const floatingTech = [
 const badges = [
   { icon: Zap,    label: "Claude AI"   },
   { icon: Cpu,    label: "Kubernetes"  },
-  { icon: Globe,  label: "AWS Bedrock" },
+  { icon: Globe,  label: "LangChain"   },
   { icon: Shield, label: "Terraform"   },
 ];
 
 const clusterRows = [
-  { label: "AI Agents",   val: "12 active",  color: "#00e676", dot: "#00e676" },
-  { label: "K8s Pods",    val: "247 / 250",  color: "#00bcd4", dot: "#00bcd4" },
-  { label: "GPU Usage",   val: "87%",        color: "#8b5cf6", dot: "#8b5cf6" },
-  { label: "Uptime",      val: "99.99%",     color: "#1457d6", dot: "#00e676" },
+  { label: "Placement Rate", val: "98%",       color: "#00e676", dot: "#00e676" },
+  { label: "Avg. Package",   val: "₹12 LPA+",  color: "#00bcd4", dot: "#00bcd4" },
+  { label: "Courses",        val: "9 tracks",  color: "#8b5cf6", dot: "#8b5cf6" },
+  { label: "Mode",           val: "Online",    color: "#1457d6", dot: "#00e676" },
 ];
 
 const placedAt = ["TCS", "Infosys", "Wipro", "Cognizant", "Zoho"];
@@ -79,7 +79,7 @@ export function Hero() {
 
   return (
     <section ref={containerRef}
-      className="relative min-h-screen flex items-center overflow-hidden pt-[88px]"
+      className="relative min-h-screen flex items-center overflow-hidden pt-[72px]"
       style={{ background: "#060e1e" }}>
       <style>{`
         @keyframes gradShift {
@@ -125,7 +125,7 @@ export function Hero() {
       }} />
 
       <div className="max-w-7xl mx-auto px-6 w-full relative z-10 py-12">
-        <div className="grid lg:grid-cols-2 gap-8 xl:gap-12 items-center min-h-[calc(100vh-88px)]">
+        <div className="grid lg:grid-cols-2 gap-8 xl:gap-12 items-center min-h-[calc(100vh-72px)]">
 
           {/* ════════ LEFT ════════ */}
           <motion.div style={{ y: yLeft, opacity: opLeft }} className="flex flex-col justify-center">
@@ -138,7 +138,11 @@ export function Hero() {
               style={{ background: "rgba(0,230,118,0.06)", border: "1px solid rgba(0,230,118,0.22)" }}>
               <span className="w-2 h-2 rounded-full bg-[#00e676] animate-pulse" />
               <span className="text-xs text-[#00e676] font-semibold tracking-wider uppercase">
-                Enrolling Now · Next Batch: July 2025
+                {(() => {
+                  const d = new Date();
+                  d.setMonth(d.getMonth() + 1);
+                  return `Enrolling Now · Next Batch: ${d.toLocaleString("default", { month: "long", year: "numeric" })}`;
+                })()}
               </span>
             </motion.div>
 
@@ -200,7 +204,7 @@ export function Hero() {
                   {co}
                 </span>
               ))}
-              <span className="text-[11px] text-[#3a526e] font-sans">& 50+ more</span>
+              <span className="text-[11px] text-[#3a526e] font-sans">& others</span>
             </motion.div>
 
             <HeroStats />
@@ -287,8 +291,8 @@ export function Hero() {
               >
                 <div className="flex items-center gap-2 mb-2.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-[#00e676] animate-pulse" />
-                  <span className="text-[10px] text-[#4a627e] font-bold tracking-[0.14em] uppercase">Cluster Status</span>
-                  <span className="ml-auto text-[10px] text-[#00e676] font-semibold">Live</span>
+                  <span className="text-[10px] text-[#4a627e] font-bold tracking-[0.14em] uppercase">Programme Info</span>
+                  <span className="ml-auto text-[10px] text-[#00e676] font-semibold">Open</span>
                 </div>
                 {clusterRows.map((row) => (
                   <div key={row.label} className="flex items-center justify-between gap-5 mb-1.5 last:mb-0">
@@ -314,9 +318,9 @@ export function Hero() {
                   boxShadow: "0 8px 32px rgba(0,0,0,0.4)",
                 }}
               >
-                <div className="text-[10px] text-[#4a627e] font-bold tracking-widest uppercase mb-1">LLM Inference</div>
-                <div className="text-[15px] font-black" style={{ color: "#8b5cf6" }}>1.2M tokens/day</div>
-                <div className="text-[10px] text-[#00e676] mt-0.5 font-semibold">↑ 18% this week</div>
+                <div className="text-[10px] text-[#4a627e] font-bold tracking-widest uppercase mb-1">Latest Placement</div>
+                <div className="text-[15px] font-black" style={{ color: "#00e676" }}>₹12 LPA</div>
+                <div className="text-[10px] text-[#00bcd4] mt-0.5 font-semibold">AI Engineer · Zoho Corp</div>
               </motion.div>
             </div>
           </motion.div>
